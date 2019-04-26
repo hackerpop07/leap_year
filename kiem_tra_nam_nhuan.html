@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra năm nhuận</title>
+</head>
+<body>
+<input type="number" id="nhapnam">
+<button onclick="kiemtra()">Kiểm Tra</button>
+<button onclick="xoa()">Xóa</button>
+<p id="ketqua"></p>
+<script>
+    function kiemtra() {
+        let year = parseFloat(document.getElementById("nhapnam").value);
+        let a = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    a = true;
+                }
+            } else {
+                a = true;
+            }
+        }
+        if (a) {
+            document.getElementById("ketqua").innerHTML ='Là năm nhuận';
+        } else {
+            document.getElementById("ketqua").innerHTML ='Ko phải là năm nhuận';
+        }
+    }
+    function xoa() {
+        document.getElementById("nhapnam").value = '';
+    }
+</script>
+</body>
+</html>
